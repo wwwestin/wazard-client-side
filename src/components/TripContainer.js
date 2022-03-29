@@ -1,9 +1,9 @@
 import React from "react";
 import TripCard from "./TripCard";
 
-function TripContainer({trip}) {
+function TripContainer({trips}) {
     
-const cards = trip.map((t) =>(
+const cards = trips.map((t) =>(
     <TripCard key={t.id} trip = {t} />
 ));
 

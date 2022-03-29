@@ -12,8 +12,10 @@ function TripPage() {
       }, []);
 
     return (
-        <div>
-            <TripContainer trips = {trips} />
+        <div className = "cards-container">
+            <div>
+                <TripContainer trips = {trips} />
+            </div>
         </div>
     )
 }

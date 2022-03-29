@@ -8,10 +8,11 @@ function NavBar() {
                 <Link to="/">Home</Link>
             </li>
             <li>
-                <Link to="/my-trips">Where I'm Going</Link>
-            </li>
-        </nav>
+                <Link to="/my-trips">My Trips</Link>
+            </li> 
+        </nav> 
     )
 }
 
 export default NavBar;
+

@@ -6,8 +6,11 @@ function TripCard({trip}) {
 
     return (
         <div>
-            <div className= "card">
-                {user}{location}
+            <div className= "card-name">
+                {user}
+            </div>
+            <div className="location">
+                {location}  
             </div>
         </div>
     )
