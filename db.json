@@ -1,0 +1,12 @@
+{
+    "test": [
+        {
+            "user": "John Doe",
+            "location": "Spain"
+        },
+        {
+            "user": "LL Cool J",
+            "location": "Queens"
+        }
+    ]
+}
