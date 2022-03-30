@@ -1,6 +1,7 @@
 import React from "react";
 
-function TripCard({trip}) {
+function TripCard({trip, removeTrip}) {
+
 
     const {user, location} = trip;
 
@@ -12,6 +13,7 @@ function TripCard({trip}) {
             <div className="location">
                 {location}  
             </div>
+            <button onClick={removeTrip(item)} id="delete"> X </button>
         </div>
     )
 }

@@ -18,8 +18,7 @@ function handleSubmit(event){
     event.preventDefault()
 
     const newTrip = {
-        user: formData.user,
-        location: formData.location,
+        ...formData,
         };
 
     fetch("http://localhost:8000/test", {
@@ -31,13 +30,12 @@ function handleSubmit(event){
       })
         .then((r) => r.json())
         .then(onAddTrip);
-
 };
 
     return (
-        <div className="trip-form">
+        <div className= "container">
+            <form onSubmit = {handleSubmit} className= "add-trip-form">
             <h2>Add a Trip!</h2>
-            <form onSubmit = {handleSubmit}>
                 <input 
                     type= "text"
                     placeholder= "Your Name Here!"
@@ -47,13 +45,14 @@ function handleSubmit(event){
                 />
                 <input
                     type= "text"
-                    placeholder="Where Are You Going?"
+                    placeholder= "Where Are You Going?"
                     name= "location"
                     value= {formData.location}
                     onChange= {handleChange}
                 />
             </form>
-            <button className="but" type="submit">Submit</button>
+            <button className="button" type="submit">Submit</button>
+            
         </div>
     )
 }
