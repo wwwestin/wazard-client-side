@@ -5,7 +5,6 @@ function MyTrips() {
 
     return (
         <div>
-                <h2>"lkdfjadslkjfdas;l"</h2>
         </div>
     )
 }
