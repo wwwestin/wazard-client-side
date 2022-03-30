@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './TripForm.css';
 
 function TripForm({onAddTrip}) {
 const [formData, setFormData] = useState({
@@ -52,7 +53,7 @@ function handleSubmit(event){
                     onChange= {handleChange}
                 />
             </form>
-            <button type="submit">Submit</button>
+            <button className="but" type="submit">Submit</button>
         </div>
     )
 }

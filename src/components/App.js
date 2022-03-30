@@ -4,6 +4,7 @@ import NavBar from './NavBar';
 import TripPage from './TripPage';
 import MyTrips from './MyTrips';
 import Header from './Header';
+import '../App.css';
 
 function App() {
     return (
