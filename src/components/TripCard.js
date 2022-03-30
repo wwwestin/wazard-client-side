@@ -2,10 +2,10 @@ import React from "react";
 
 function TripCard({trip, removeTrip}) {
 
-    const {id, user, location} = trip;
+    const {id, users, name} = trip;
 
     function handleDeleteClick() {
-        fetch(`http://localhost:8000/test/${id}`, {
+        fetch(`http://localhost:9292/users/${id}`, {
           method: "DELETE",
         })
           .then((r) => r.json())
@@ -17,10 +17,10 @@ function TripCard({trip, removeTrip}) {
     return (
         <div>
             <div className= "card-name">
-                {user}
+                {users}
             </div>
             <div className="location">
-                {location}  
+                {name}  
             </div>
             <button onClick={handleDeleteClick} id="delete"> X </button>
         </div>

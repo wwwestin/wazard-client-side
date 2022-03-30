@@ -42,6 +42,7 @@ function handleSubmit(event){
                     name= "user"
                     value= {formData.user}
                     onChange= {handleChange}
+                    className= "input-text"
                 />
                 <input
                     type= "text"
@@ -49,6 +50,7 @@ function handleSubmit(event){
                     name= "location"
                     value= {formData.location}
                     onChange= {handleChange}
+                    className= "input-text"
                 />
                  <button className="button" type="submit">Submit</button>
             </form>
