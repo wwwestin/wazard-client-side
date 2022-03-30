@@ -52,7 +52,6 @@ function handleSubmit(event){
                 />
             </form>
             <button className="button" type="submit">Submit</button>
-            
         </div>
     )
 }

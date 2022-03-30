@@ -10,7 +10,6 @@ function TripPage() {
         setTrips([...trips, newTrip]);
     }
 
-
     useEffect(() => {
         fetch("http://localhost:8000/test")
         .then((r) => r.json())
@@ -19,27 +18,18 @@ function TripPage() {
 
 
     function handleDelete(trip){
-        const newArray = trips.filter(item => item !== trip)
+        const newArray = trips.filter((item) => item.id !== trip.id)
         setTrips(newArray)
-    }
-      
-    function completelyRemove(item){
-        fetch('http://localhost:8000/test/${item.id}',{
-            method: "DELETE"
-        })
-            .then(response => response.json())
-            .then(data => console.log("Trip Deleted"))  
-            
-            handleDelete(item)
-            const newTripsArray = trips.filter(currentItem => currentItem !== item)
-            setTrips(newTripsArray)
     }
 
     return (
         <div className = "cards-container">
             <div>
                 <TripForm onAddTrip = {handleAddTrip} />
-                <TripContainer trips = {trips} completelyRemove={completelyRemove} />
+                <TripContainer 
+                trips = {trips} 
+                removeTrip = {handleDelete} 
+                />
             </div>
         </div>
     )
