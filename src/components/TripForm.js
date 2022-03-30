@@ -50,8 +50,9 @@ function handleSubmit(event){
                     value= {formData.location}
                     onChange= {handleChange}
                 />
+                 <button className="button" type="submit">Submit</button>
             </form>
-            <button className="button" type="submit">Submit</button>
+           
         </div>
     )
 }
