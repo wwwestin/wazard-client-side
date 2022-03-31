@@ -9,16 +9,20 @@ import '../App.css';
 function App() {
     return (
         <div className="App">
-            <div>
+                <>
                 <Header />
-            </div>
-            <Router>
-                <NavBar />
+
+                <div>
+                <Router>
+                    <NavBar />
                     <Route>
                         <Route exact path="/" element= {<TripPage />} />
                         <Route exact path="/my-trips" element= {<MyTrips />} />
                     </Route>
-                </Router> 
+                </Router>
+                </div>
+
+                </>
                 <div>
                     <TripPage />
                 </div>
