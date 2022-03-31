@@ -6,9 +6,9 @@ function TripContainer({trips, removeTrip}) {
 
 const cards = trips.map((trip) =>(
     <TripCard 
-    key={trip.id} 
-    trip = {trip} 
-    removeTrip={removeTrip}
+        key={trip.id} 
+        trip = {trip} 
+        removeTrip={removeTrip}
     />
 ));
 

@@ -12,12 +12,6 @@ function TripPage() {
         .then(setTrips);
       }, []);
 
-      useEffect(() => {
-        fetch("http://localhost:9292/locations")
-        .then((r) => r.json())
-        .then(setTrips);
-      }, []);
-
       function handleAddTrip(newTrip) {
         setTrips([...trips, newTrip]);
     }
@@ -32,8 +26,8 @@ function TripPage() {
             <div>
                 <TripForm onAddTrip = {handleAddTrip} />
                 <TripContainer 
-                trips = {trips} 
-                removeTrip = {handleDelete} 
+                    trips = {trips} 
+                    removeTrip = {handleDelete} 
                 />
             </div>
         </div>
