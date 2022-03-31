@@ -13,7 +13,6 @@ function App() {
                 <NavBar />
                     <Routes>
                         <Route exact path="/" element={<TripPage />} />
-                        <Route path="/" element= {<TripPage />} />
                         <Route path="/my-trips" element= {<MyTrips />} />
                     </Routes>
             </Router>
