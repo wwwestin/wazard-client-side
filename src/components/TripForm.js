@@ -35,25 +35,39 @@ function handleSubmit(event){
 };
 
     return (
-        <div className="trip-form">
-            <h2>Add a Trip!</h2>
+        <div className="box">
+
+            {/* <h2></h2> */}
+
             <form onSubmit = {handleSubmit}>
+               
+               <span className="text-center">Add a Trip!</span>
+
+                <div className="input-container">
                 <input 
                     type= "text"
                     placeholder= "Your Name Here!"
                     name= "user"
                     value= {formData.user}
                     onChange= {handleChange}
+                    required=""
                 />
+                <label>NAME</label>
+                </div>
+               <div className="input-container">
                 <input
                     type= "text"
                     placeholder="Where Are You Going?"
                     name= "location"
                     value= {formData.location}
                     onChange= {handleChange}
+                    required=""
                 />
+                <label>LOCATION</label>
+                </div>
+            <button className="btn" type="submit">Submit</button>
+           
             </form>
-            <button className="but" type="submit">Submit</button>
         </div>
     )
 }
