@@ -5,22 +5,36 @@ import TripForm from "./TripForm";
 function TripPage() {
 
     const [trips, setTrips] = useState([]);
-
-    function handleAddTrip(newTrip) {
-        setTrips([...trips, newTrip]);
-    }
-
+    
     useEffect(() => {
-        fetch("http://localhost:8000/test")
+        fetch("http://localhost:9292/users")
         .then((r) => r.json())
         .then(setTrips);
       }, []);
+
+      useEffect(() => {
+        fetch("http://localhost:9292/locations")
+        .then((r) => r.json())
+        .then(setTrips);
+      }, []);
+
+      function handleAddTrip(newTrip) {
+        setTrips([...trips, newTrip]);
+    }
+
+    function handleDelete(trip){
+        const newArray = trips.filter((item) => item.id !== trip.id)
+        setTrips(newArray)
+    }
 
     return (
         <div className = "cards-container">
             <div>
                 <TripForm onAddTrip = {handleAddTrip} />
-                <TripContainer trips = {trips} />
+                <TripContainer 
+                trips = {trips} 
+                removeTrip = {handleDelete} 
+                />
             </div>
         </div>
     )
