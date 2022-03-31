@@ -9,8 +9,10 @@ import '../App.css';
 function App() {
     return (
         <div className="App">
-            <div>
+                <>
                 <Header />
+
+                <div>
                 <Router>
                     <NavBar />
                     <Route>
@@ -18,8 +20,9 @@ function App() {
                         <Route exact path="/my-trips" element= {<MyTrips />} />
                     </Route>
                 </Router>
-            </div>
-           
+                </div>
+
+                </>
                 <div>
                     <TripPage />
                 </div>

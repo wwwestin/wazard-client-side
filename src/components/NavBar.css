@@ -1,0 +1,31 @@
+
+
+main {
+    color: rgb(20, 19, 19);
+}
+
+.header {
+    background-color: rgb(15, 3, 3);
+    position: fixed;
+    bottom: 4;
+    top: 0;
+    left: 0;
+    right: 9;
+    height: 80px;
+    display: inline;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+}
+
+.header * {
+    display: vertical;
+}
+
+.header li {
+    margin: 10px;
+}
+
+.header li a {
+    color: rgb(238, 238, 238);
+    text-decoration: none;
+}
