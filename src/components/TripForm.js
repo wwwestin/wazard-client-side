@@ -2,35 +2,30 @@ import React, {useState} from "react";
 import './TripForm.css';
 
 function TripForm({onAddTrip}) {
-const [formData, setFormData] = useState({
-    user: "",
-    location: "",
-});
+    const [formData, setFormData] = useState("");
 
-function handleChange(event) {
-    setFormData({
-        ...formData,
-        [event.target.name]: event.target.value,
-    });
-}
-
-function handleSubmit(event){
-    event.preventDefault()
-
-    const newTrip = {
-        ...formData,
-        };
-
-    fetch("http://localhost:8000/test", {
+    function handleSubmit(e) {
+      e.preventDefault();
+  
+      fetch("http://localhost:9292/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(newTrip),
+        body: JSON.stringify({
+          formData: formData.name,
+          
+        }), 
+        
       })
+      
         .then((r) => r.json())
-        .then(onAddTrip);
-};
+        .then((newMessage) => {
+          onAddTrip(newMessage);
+          setFormData("");
+        });
+    }
+    
 
     return (
         <div className="box">
@@ -42,14 +37,52 @@ function handleSubmit(event){
                         type= "text"
                         placeholder= "Your Name Here!"
                         name= "user"
-                        value= {formData.user}
-                        onChange= {handleChange}
+                        value= {formData}
+                        onChange= {(e) => setFormData(e.target.value)}
                         required=""
                         className= "input-text"
                     />
                     <label>NAME</label>
                     </div>
-               <div className="input-container">
+               
+                   <button className="btn" type="submit">Submit</button>
+            </form>
+        </div>
+    )
+}
+
+export default TripForm;
+
+// const [formData, setFormData] = useState({
+//     name: "",
+   
+// });
+
+// function handleChange(event) {
+//     setFormData({
+//         ...formData,
+//         [event.target.name]: event.target.value,
+//     });
+// }
+
+// function handleSubmit(event){
+//     event.preventDefault()
+
+//     const newTrip = {
+//         ...formData,
+//         };
+
+//     fetch("http://localhost:9292/users", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(newTrip),
+//       })
+//         .then((r) => r.json())
+//         .then(onAddTrip);
+// };
+/* <div className="input-container">
                     <input
                         type= "text"
                         placeholder= "Where Are You Going?"
@@ -60,11 +93,4 @@ function handleSubmit(event){
                         className= "input-text"
                     />
                     <label>LOCATION</label>
-                    </div>
-                   <button className="btn" type="submit">Submit</button>
-            </form>
-        </div>
-    )
-}
-
-export default TripForm;
+                    </div> */

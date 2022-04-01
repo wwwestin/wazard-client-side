@@ -1,6 +1,6 @@
 import React from "react";
 
-function TripCard({trip, removeTrip}) {
+function TripCard({trip, handleDeleteTrip}) {
 
     const {id, name, locations} = trip;
 
@@ -14,14 +14,14 @@ function TripCard({trip, removeTrip}) {
         })
           .then((r) => r.json())
           .then(() => {
-            removeTrip(trip);
+            handleDeleteTrip(trip);
           });
       }
       
       return (
         <div>
             <div className= "card-name">
-                {name}
+              {name}
             </div>
             <div className="location">
               {locales}

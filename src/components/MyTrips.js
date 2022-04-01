@@ -18,11 +18,6 @@ function MyTrips() {
         />
     ));
 
-    function handleDelete(trip){
-        const newArray = trips.filter((item) => item.id !== trip.id)
-        setTrips(newArray)
-    }
-
     return (
         <div className="box">
             <div className="text-center">
