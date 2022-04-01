@@ -6,6 +6,7 @@ function TripForm({onAddTrip}) {
 
     function handleSubmit(e) {
       e.preventDefault();
+      
   
       fetch("http://localhost:9292/users", {
         method: "POST",
@@ -13,7 +14,8 @@ function TripForm({onAddTrip}) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          formData: formData.name,
+
+          name: formData,
           
         }), 
         
